@@ -1,0 +1,202 @@
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/Q_Z9mv4hySLTMoMjnk_rCXYhjbSpvc47ee6xR_80Hnw.woff2) format('woff2');
+  font-display: swap;
+}
+
+html {
+  --blue-gray-800: #37474F;
+  --blue-gray-700: #455A64;
+  --blue-gray-600: #546E7A;
+  --blue-gray-500: #607D8B;
+  --blue-gray-200: #B0BEC5;
+  --blue-gray-100: #CFD8DC;
+  --blue-gray-50: #ECEFF1;
+  --gray-50: #FAFAFA;
+  --blue-700: #1976D2;
+  --app-dialog-button: var(--blue-700);
+  --app-header-bg: var(--blue-gray-800);
+  --app-header-color: var(--gray-50);
+  --app-body-bg: var(--blue-gray-600);
+  --app-button-off: var(--gray-50);
+  --app-button-on: var(--gray-50);
+  --app-button-on-bg: var(--blue-gray-700);
+  overscroll-behavior-y: none;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--app-body-bg);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-family: Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hidden {
+  display: none !important;
+}
+
+header {
+  background-color: var(--app-header-bg);
+  color: white;
+  padding-top: env(safe-area-inset-top);
+  width: 100%;
+}
+
+header h1 {
+  font-family: "Pacifico", cursive, serif;
+  text-align: center;
+  padding: 0.4em;
+  margin: 0;
+}
+
+header #butShare {
+  background-color: transparent;
+  border: none;
+  padding: 24px;
+  position: absolute;
+  right: 0;
+}
+
+#dialogContainer {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-top: env(safe-area-inset-top);
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+#dialogOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.6;
+  z-index: 1000;
+}
+
+.dialog {
+  box-sizing: border-box;
+  outline: none;
+  width: 425px;
+  max-width: 80%;
+  background-color: white;
+  z-index: 1500;
+  padding: 1em;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+              0  6px 30px 5px rgba(0, 0, 0, 0.12),
+              0  8px 10px -5px rgba(0, 0, 0, 0.4);
+}
+
+.dialog-title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.dialog-body {
+  margin-bottom: 1.5em;
+  margin-top: 0.4em;
+}
+
+.dialog-buttons button {
+  float: right;
+  border: none;
+  font-size: 1rem;
+  color: var(--app-dialog-button);
+  text-transform: uppercase;
+  background-color: inherit;
+}
+
+.sound-container {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  margin-top: -120px;
+}
+
+.sound-container-inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sound-container button {
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 150px;
+  background-color: inherit;
+  color: var(--app-button-off);
+}
+
+.sound-container button[disabled] {
+  opacity: 0.5;
+}
+
+.sound-container button svg {
+  fill: var(--app-button-off);
+}
+
+.sound-container button.on {
+  color: var(--app-button-on);
+  background-color: var(--app-button-on-bg);
+}
+
+.sound-container button.on svg {
+  fill: var(--app-button-on);
+}
+
+.settings-container {
+  display:none;
+}
+
+.bottom-bar-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+}
+
+.bottom-bar-container button {
+  border: 1px solid white;
+  color: var(--app-button-on);
+  font-size: 1em;
+  background-color: inherit;
+  padding: 0.75em;
+}
+
+#butPWAInstall {
+  margin-right: 1em;
+}
+
+#butPWAInstall[disabled] {
+  display: none;
+}
+
+
+ios-install-button {
+  --banner-color: white;
+  --banner-bg-color: var(--app-header-bg);
+  --button-color: var(--app-button-on);
+  --button-border: 1px solid white;
+  --button-bg-color: transparent;
+  --button-margin: 0 1em 0 0;
+}
